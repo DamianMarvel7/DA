@@ -20,4 +20,4 @@ pip install requirements.txt
 streamlit run dashboard.py
 ```
 
-Link Dashboard: [Dashboard Link](https://bikerentalsharing.streamlit.app/)
+Link Dashboard: [Dashboard Link](https://bikesharingcool.streamlit.app/)
