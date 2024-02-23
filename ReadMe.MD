@@ -9,15 +9,16 @@ seperti yang dibawah.
 - Dashboard
 
 ## Setup environment
+In the main directory
 ```
-conda create --name main-ds python=3.9
+conda create --name main-ds python=3.11
 conda activate main-ds
-pip install requirements.txt
+pip install -r requirements.txt
 ```
 
 ## Run steamlit app
 ```
-streamlit run dashboard.py
+streamlit run dashboard/dashboard.py
 ```
 
 Link Dashboard: [Dashboard Link](https://bikesharingcool.streamlit.app/)
