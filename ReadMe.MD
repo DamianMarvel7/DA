@@ -6,4 +6,18 @@ seperti yang dibawah.
 - Visualisasi Data
 - Dashboard
 
+# Bike Rental Dashboard ✨
+
+## Setup environment
+```
+conda create --name main-ds python=3.9
+conda activate main-ds
+pip install requirements.txt
+```
+
+## Run steamlit app
+```
+streamlit run dashboard.py
+```
+
 Link Dashboard: [Link Text](https://bikerentalsharing.streamlit.app/)
