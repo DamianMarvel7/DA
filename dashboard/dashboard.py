@@ -6,8 +6,8 @@ from babel.numbers import format_currency
 sns.set(style='dark')
 
 # Membaca data csv menggunakan library pandas
-bike_data_hour =  pd.read_csv('../data/hour.csv')
-bike_data_day =  pd.read_csv('../data/day.csv')
+bike_data_hour =  pd.read_csv('./data/hour.csv')
+bike_data_day =  pd.read_csv('./data/day.csv')
 
 # Mengkonversikan tipe object menjadi tipe datetime
 bike_data_day['dteday'] = pd.to_datetime(bike_data_day['dteday'])
