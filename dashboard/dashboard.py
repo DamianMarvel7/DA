@@ -41,8 +41,6 @@ main_df_hour = bike_data_hour[(bike_data_hour["dteday"] >= str(start_date)) &
 
 st.header("Bike Rental Dashboard :sparkles:")
 
-
-st.subheader('Daily Orders')
  
 col1, col2 = st.columns(2)
  
@@ -55,7 +53,6 @@ with col2:
     st.metric("Total Revenue", value=total_revenue)
 
 
-
 def plot_and_show(title, x_label, y_label, data, x, y, kind, ax):
     if kind == 'line':
         sns.lineplot(x=data.groupby(x)[y].sum().index, y=data.groupby(x)[y].sum().values, color='skyblue', ax=ax)
@@ -65,6 +62,8 @@ def plot_and_show(title, x_label, y_label, data, x, y, kind, ax):
     ax.set_title(title, loc="center")
     ax.set_xlabel(x_label)
     ax.set_ylabel(y_label)
+    
+st.subheader('Orders')
 
 # Create subplots
 fig, ax = plt.subplots(nrows=3, ncols=1, figsize=(12, 18))
