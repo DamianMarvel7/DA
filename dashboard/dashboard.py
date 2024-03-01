@@ -41,13 +41,13 @@ main_df_hour = bike_data_hour[(bike_data_hour["dteday"] >= str(start_date)) &
 
 st.header("Bike Rental Dashboard :sparkles:")
 
- 
+
 col1, col2 = st.columns(2)
- 
+
 total_rental = main_df_day['cnt'].sum()
 with col1:
     st.metric("Total Rental Bikes", value=total_rental)
- 
+
 with col2:
     total_revenue = format_currency(total_rental*10, "$", locale='es_CO') 
     st.metric("Total Revenue", value=total_revenue)
@@ -74,7 +74,7 @@ plot_and_show('Daily Bike Rental Trend', 'Date', 'Total Rental Count', main_df_d
 plot_and_show('Bike Rental Pattern at Different Hours of the Day', 'Hour of the Day', 'Total Rental Count', main_df_hour, 'hr', 'cnt', 'bar', ax=ax[1])
 # Plot Day Trend
 daily_trend = main_df_hour.groupby('weekday')['cnt'].sum()
-daily_trend.index = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+# daily_trend.index = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 plot_and_show('Bike Rental Pattern at Different Day of the Week', 'Day of the Week', 'Total Rental Count', main_df_hour, 'weekday', 'cnt', 'bar', ax=ax[2])
 
 # Display the plots using Streamlit
@@ -90,7 +90,7 @@ cold_percentile = main_df_day['temp_normal'].quantile(0.25)
 moderate_percentile = main_df_day['temp_normal'].quantile(0.75)
 
 main_df_day['temperature_category'] = pd.cut(main_df_day['temp_normal'], bins=[-float('inf'), cold_percentile, moderate_percentile, float('inf')],
-                                              labels=['Cold', 'Moderate', 'Hot'])
+                                            labels=['Cold', 'Moderate', 'Hot'])
 
 
 
